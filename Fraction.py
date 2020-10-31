@@ -10,8 +10,11 @@ Fraction class
 
 class Fraction:
     def __init__(self, num, den):
-        self.num = num
-        self.den = den
+        a = self.gcd(num, den)
+        self.num = num/a
+        self.den = den/a
+
+
 
     def __str__(self):
         return f"{self.num}/{self.den}"
@@ -24,18 +27,21 @@ class Fraction:
     def __add__(self, other):
         new_top = self.num * other.den + other.num*self.den
         new_bottom = self.den * other.den
-        a = self.gcd(new_top, new_bottom)
-        return Fraction(new_top/a, new_bottom/a)
+        return Fraction(new_top, new_bottom)
 
     def __eq__(self, other):
         return (self.num, self.den) == (other.num, other.den)
 
+    def get_num(self):
+        return self.num
 
+    def get_den(self):
+        return self.den
 
 my_fraction = Fraction(3,5)
 
-f1 = Fraction(3,4)
-f2 = Fraction(3,4)
+f1 = Fraction(1,2)
+f2 = Fraction(1,4)
 f1_2 = f1+f2
+
 print(f1_2)
-print(f1==f2)
