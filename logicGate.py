@@ -139,7 +139,6 @@ class Connector:
 
 def main():
    g1 = NandGate("G1")
-
    print(g1.get_output())
 
 main()

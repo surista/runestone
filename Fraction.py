@@ -7,14 +7,11 @@ Fraction class
 """
 
 
-
 class Fraction:
     def __init__(self, num, den):
         a = self.gcd(num, den)
         self.num = num/a
         self.den = den/a
-
-
 
     def __str__(self):
         return f"{self.num}/{self.den}"
@@ -37,11 +34,3 @@ class Fraction:
 
     def get_den(self):
         return self.den
-
-my_fraction = Fraction(3,5)
-
-f1 = Fraction(1,2)
-f2 = Fraction(1,4)
-f1_2 = f1+f2
-
-print(f1_2)
