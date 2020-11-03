@@ -3,7 +3,7 @@
 """
 S. Urista
 Nov 2020
-Module documentation goes here
+Checks to see if parentheses are well balanced
 """
 
 def par_checker(par_string):
